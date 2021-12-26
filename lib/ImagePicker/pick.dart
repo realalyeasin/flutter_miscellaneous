@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
  import 'package:image_picker/image_picker.dart';
 import 'package:important_widgets/ImagePicker/imagePicker.dart';
+import 'package:important_widgets/Widgets/ProgressWidgets.dart';
 
 class ImageFromGallery extends StatefulWidget {
   final type;
@@ -62,7 +63,8 @@ class _ImageFromGalleryState extends State<ImageFromGallery> {
                 )
               ),
             ),
-          )
+          ),
+          CircuarProgress(),
         ],
       ),
     );

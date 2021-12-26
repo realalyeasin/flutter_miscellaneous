@@ -142,6 +142,14 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blueAccent, Colors.black]
+          ),
+
+        ),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
@@ -163,61 +171,64 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Row(
-                  children: [
-                    FlatButton(
-                        onPressed: () async {
-                          await showRegisterDialog(context);
-                        },
-                        color: Colors.black,
-                        highlightColor: Colors.lightGreenAccent,
-                        child: Text(
-                          'Register with mail',
-                          style: TextStyle(
-                              color: Colors.white,
-                              letterSpacing: 2,
-                              fontSize: 13),
-                        )),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    FlatButton(
-                        onPressed: () async {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DatePickerDialog(
-                                    initialDate: DateTime.now(),
-                                    firstDate: DateTime(1995),
-                                    lastDate: DateTime(2022),
-                                  )));
-                        },
-                        color: Colors.black,
-                        highlightColor: Colors.lightGreenAccent,
-                        child: Text(
-                          'Calender',
-                          style: TextStyle(
-                              color: Colors.white,
-                              letterSpacing: 2,
-                              fontSize: 13),
-                        )),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    FlatButton(
-                        color: Colors.black,
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => IImagePicker()));
-                        },
-                        child: Text(
-                          'Image Picker',
-                          style: TextStyle(
-                              color: Colors.white,
-                              letterSpacing: 2,
-                              fontSize: 13,
-                              backgroundColor: Colors.black),
-                        ))
-                  ],
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Column(
+
+                    children: [
+                      FlatButton(
+                          onPressed: () async {
+                            await showRegisterDialog(context);
+                          },
+                          color: Colors.black,
+                          highlightColor: Colors.lightGreenAccent,
+                          child: Text(
+                            'Register with mail',
+                            style: TextStyle(
+                                color: Colors.white,
+                                letterSpacing: 2,
+                                fontSize: 13),
+                          )),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      FlatButton(
+                          onPressed: () async {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DatePickerDialog(
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(1995),
+                                      lastDate: DateTime(2022),
+                                    )));
+                          },
+                          color: Colors.black,
+                          highlightColor: Colors.lightGreenAccent,
+                          child: Text(
+                            'Calender',
+                            style: TextStyle(
+                                color: Colors.white,
+                                letterSpacing: 2,
+                                fontSize: 13),
+                          )),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      FlatButton(
+                          color: Colors.black,
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => IImagePicker()));
+                          },
+                          child: Text(
+                            'Image Picker',
+                            style: TextStyle(
+                                color: Colors.white,
+                                letterSpacing: 2,
+                                fontSize: 13,
+                                backgroundColor: Colors.black),
+                          ))
+                    ],
+                  ),
                 ),
               )
             ],
