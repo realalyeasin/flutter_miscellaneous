@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ImagePicker/imagePicker.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Widgets/SearchPage.dart';
@@ -312,6 +313,15 @@ class _HomePageState extends State<HomePage> {
                             )),
                       ]),
                     ),
+                  ),
+                  SizedBox(width: 12,),
+                  Container(
+                    width: 40,
+                    color: Colors.white54,
+                    child: FlatButton(onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TWHomePage()));
+                    },
+                        child: Text('TextWrapper', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),)),
                   )
                 ],
               )

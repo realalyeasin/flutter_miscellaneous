@@ -37,10 +37,13 @@ class _SMHomeScreenState extends State<SMHomeScreen> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => MyListScreen()));
                 },
-                label: Text('Go to my list (${myList.length})'),
+                label: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Go to my list (${myList.length})', style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),),
+                ),
                 icon: Icon(
                   Icons.favorite,
-                  color: Colors.amberAccent,
+                  color: Colors.black,
                 ),
               ),
               SizedBox(
