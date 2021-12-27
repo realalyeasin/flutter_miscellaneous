@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'ImagePicker/imagePicker.dart';
+import 'StateManagement/screens/home_screen.dart';
+import 'Widgets/SearchPage.dart';
+import 'Widgets/clip.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           bool isChecked = false;
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
-              backgroundColor: Colors.amberAccent[100],
+              backgroundColor: Colors.blueAccent[100],
               content: Form(
                 key: _formKey,
                 child: Column(
@@ -76,7 +78,7 @@ class _HomePageState extends State<HomePage> {
               TextEditingController();
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
-              backgroundColor: Colors.amberAccent[100],
+              backgroundColor: Colors.blueAccent[100],
               content: Form(
                 key: _formKey,
                 child: Column(
@@ -140,15 +142,19 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 2),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SearchPage())),
+              icon: Icon(Icons.search))
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.blueAccent, Colors.black]
-          ),
-
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.blueAccent, Colors.black]),
         ),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -174,7 +180,6 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: Column(
-
                     children: [
                       FlatButton(
                           onPressed: () async {
@@ -230,6 +235,85 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+              ),
+              Row(
+                children: [
+                  ClipPath(
+                    clipper: MyClipper(),
+                    child: Container(
+                      width: 120,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.deepPurple, Colors.purple]),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(1),
+                              spreadRadius: 5,
+                              blurRadius: 5,
+                              offset: Offset(1, 4),
+                            )
+                          ]),
+                      child: Stack(children: [
+                        Positioned(
+                            top: 11,
+                            left: 5,
+                            child: Text(
+                              'ClipBehavior',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  letterSpacing: 2,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ]),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  ClipPath(
+                    clipper: MyClipper(),
+                    child: Container(
+                      width: 178,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.purple, Colors.pinkAccent]),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: Offset(0, 1),
+                            )
+                          ]),
+                      child: Stack(children: [
+                        Positioned(
+                            top: -5,
+                            left: 1,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => SMHomeScreen()));
+                              },
+                              child: Text(
+                                'State Management',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  letterSpacing: 2,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            )),
+                      ]),
+                    ),
+                  )
+                ],
               )
             ],
           ),
