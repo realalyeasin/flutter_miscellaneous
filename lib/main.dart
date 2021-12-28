@@ -4,9 +4,6 @@ import 'package:provider/provider.dart';
 import 'StateManagement/provider/movie_provider.dart';
 import 'homePage.dart';
 
-/*void main(){
-  runApp(MyApp());
-}*/
 void main() {
   runApp(ChangeNotifierProvider<MovieProvider>(
       child: MyApp(), create: (_) => MovieProvider()));

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ImagePicker/imagePicker.dart';
+import 'SQFLiteNotes/SQFLNotesHomePage.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
@@ -159,29 +160,24 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
+          child: Stack(
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  FlatButton(
-                    color: Colors.black,
-                    onPressed: () async {
-                      await showInformationDialog(context);
-                    },
-                    child: Text(
-                      'Add Name',
-                      style: TextStyle(
-                          letterSpacing: 2, fontSize: 13, color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: Column(
                     children: [
+                      FlatButton(
+                        color: Colors.black,
+                        onPressed: () async {
+                          await showInformationDialog(context);
+                        },
+                        child: Text(
+                          'Add Name',
+                          style: TextStyle(
+                              letterSpacing: 2, fontSize: 13, color: Colors.white),
+                        ),
+                      ),
                       FlatButton(
                           onPressed: () async {
                             await showRegisterDialog(context);
@@ -237,93 +233,131 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  ClipPath(
-                    clipper: MyClipper(),
-                    child: Container(
-                      width: 120,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [Colors.deepPurple, Colors.purple]),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(1),
-                              spreadRadius: 5,
-                              blurRadius: 5,
-                              offset: Offset(1, 4),
-                            )
-                          ]),
-                      child: Stack(children: [
-                        Positioned(
-                            top: 11,
-                            left: 5,
-                            child: Text(
-                              'ClipBehavior',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  letterSpacing: 2,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                      ]),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  ClipPath(
-                    clipper: MyClipper(),
-                    child: Container(
-                      width: 178,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [Colors.purple, Colors.pinkAccent]),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(1),
-                              spreadRadius: 1,
-                              blurRadius: 2,
-                              offset: Offset(0, 1),
-                            )
-                          ]),
-                      child: Stack(children: [
-                        Positioned(
-                            top: -5,
-                            left: 1,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => SMHomeScreen()));
-                              },
+              Positioned(
+                top: 210,
+                child: Row(
+                  children: [
+                    ClipPath(
+                      clipper: MyClipper(),
+                      child: Container(
+                        width: 120,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [Colors.deepPurple, Colors.purple]),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(1),
+                                spreadRadius: 5,
+                                blurRadius: 5,
+                                offset: Offset(1, 4),
+                              )
+                            ]),
+                        child: Stack(children: [
+                          Positioned(
+                              top: 11,
+                              left: 5,
                               child: Text(
-                                'State Management',
+                                'ClipBehavior',
                                 style: TextStyle(
-                                  color: Colors.white,
-                                  letterSpacing: 2,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            )),
-                      ]),
+                                    color: Colors.white,
+                                    letterSpacing: 2,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ]),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 12,),
-                  Container(
-                    width: 40,
-                    color: Colors.white54,
-                    child: FlatButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TWHomePage()));
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ClipPath(
+                      clipper: MyClipper(),
+                      child: Container(
+                        width: 178,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [Colors.purple, Colors.pinkAccent]),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(1),
+                                spreadRadius: 1,
+                                blurRadius: 2,
+                                offset: Offset(0, 1),
+                              )
+                            ]),
+                        child: Stack(children: [
+                          Positioned(
+                              top: -5,
+                              left: 1,
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => SMHomeScreen()));
+                                },
+                                child: Text(
+                                  'State Management',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    letterSpacing: 2,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              )),
+                        ]),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                left: 300,
+                  top: 20,
+                  child: Container(
+                width: 40,
+                height: 180,
+                color: Colors.white54,
+                child: FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => TWHomePage()));
                     },
-                        child: Text('TextWrapper', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),)),
-                  )
-                ],
+                    child: Text(
+                      'TextWrapper',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    )),
+              )),
+              Positioned(
+                top: 262,
+                left: 5,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 70,
+                      color: Colors.white54,
+                      child: FlatButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SQFLNotesHomePage()));
+                          },
+                          child: Text(
+                            'SQFL Notes',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          )),
+                    )
+                  ],
+                ),
               )
             ],
           ),
