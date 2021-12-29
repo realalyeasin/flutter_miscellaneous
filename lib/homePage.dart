@@ -3,6 +3,7 @@ import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ImagePicker/imagePicker.dart';
 import 'SQFLiteNotes/SQFLNotesHomePage.dart';
 import 'StateManagement/screens/home_screen.dart';
+import 'Stepper/StepByStep.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
 
@@ -148,7 +149,15 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => SearchPage())),
-              icon: Icon(Icons.search))
+              icon: Icon(Icons.search)),
+          PopupMenuButton(
+            color: Colors.lightBlueAccent.shade100,
+              itemBuilder: (BuildContext ctx)=> [
+                PopupMenuItem(child: Text('Option 1'), value: 1,),
+                PopupMenuItem(child: Text('Option 2'), value: 2,),
+                PopupMenuItem(child: Text('Option 3'), value: 3,),
+                PopupMenuItem(child: Text('Option 4'), value: 4,),
+              ])
         ],
       ),
       body: Container(
@@ -358,7 +367,22 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              Positioned(
+                top: 262,
+                  left: 94,
+                  child: Container(
+                    width: 85,
+                    color: Colors.white54,
+                child: FlatButton(
+                  child: Text('Stepper',style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StepByStep()));
+                  },
+                ),
+              ))
             ],
           ),
         ),

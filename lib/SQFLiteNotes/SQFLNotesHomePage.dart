@@ -95,8 +95,17 @@ class _SQFLNotesHomePageState extends State<SQFLNotesHomePage> {
 
   void _deleteItem(int id) async {
     await SQLHelper.deleteItem(id);
-    ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Succssfully deleted a journal!')));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Succssfully deleted a journal!'),
+      duration: Duration(milliseconds: 1200),
+      backgroundColor: Colors.black,
+      action: SnackBarAction(
+        label: 'Dismiss',
+        onPressed: () {
+          Scaffold.of(context).hideCurrentSnackBar();
+        },
+      ),
+    ));
     _refreshJournals();
   }
 
