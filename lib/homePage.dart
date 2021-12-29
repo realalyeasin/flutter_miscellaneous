@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ImagePicker/imagePicker.dart';
+import 'Rating/ProductRating.dart';
 import 'SQFLiteNotes/SQFLNotesHomePage.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Stepper/StepByStep.dart';
@@ -382,7 +383,22 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StepByStep()));
                   },
                 ),
-              ))
+              )),
+              Positioned(
+                  top: 262,
+                  left: 198,
+                  child: Container(
+                    width: 85,
+                    color: Colors.white54,
+                    child: FlatButton(
+                      child: Text('Rating',style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ProductRating()));
+                      },
+                    ),
+                  ))
             ],
           ),
         ),
