@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ImagePicker/imagePicker.dart';
@@ -398,7 +399,29 @@ class _HomePageState extends State<HomePage> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ProductRating()));
                       },
                     ),
-                  ))
+                  )),
+              Positioned(
+                top: 262,
+                left: 299,
+                child: Badge(
+                  position: BadgePosition.topEnd(top: -10, end: -12),
+                  badgeColor: Colors.deepOrange,
+                  badgeContent: Container(
+                    alignment: Alignment.center,
+                    child: Text('12'),
+                  ),
+                  child: Container(
+                    width: 69,
+                    height: 48,
+                    color: Colors.white54,
+                    child: Center(
+                      child: Text('Badge',style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
