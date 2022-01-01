@@ -147,7 +147,7 @@ class _SQFLNotesHomePageState extends State<SQFLNotesHomePage> {
                     ),
                   )),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, ),
         onPressed: () => _showForm(null),
       ),
     );

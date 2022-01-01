@@ -1,7 +1,9 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
+import 'DynamicCheckBox/DynamicCheckBox.dart';
 import 'ImagePicker/imagePicker.dart';
+import 'ListHighlight/ListHighlight.dart';
 import 'Rating/ProductRating.dart';
 import 'SQFLiteNotes/SQFLNotesHomePage.dart';
 import 'StateManagement/screens/home_screen.dart';
@@ -421,7 +423,38 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-              )
+              ),
+              Positioned(
+                  top: 318,
+                  child: Card(
+                    color: Colors.white,
+                    child: FlatButton(
+                      child: Text('Highlight',style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                          fontSize: 15,
+                          letterSpacing: 1)),
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ListHighlight()));
+                      },
+                    ),
+                  )),
+              Positioned(
+                  top: 318,
+                  left: 110,
+                  child: Card(
+                    color: Colors.white,
+                    child: FlatButton(
+                      child: Text('Dynamic CheckBox',style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                          fontSize: 15,
+                          letterSpacing: 1)),
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DynamicCheckBox()));
+                      },
+                    ),
+                  )),
             ],
           ),
         ),
