@@ -8,6 +8,7 @@ import 'Rating/ProductRating.dart';
 import 'SQFLiteNotes/SQFLNotesHomePage.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Stepper/StepByStep.dart';
+import 'SwipeRemove/SwipeRemove.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
 
@@ -431,7 +432,7 @@ class _HomePageState extends State<HomePage> {
                     child: FlatButton(
                       child: Text('Highlight',style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue,
+                          color: Colors.black,
                           fontSize: 15,
                           letterSpacing: 1)),
                       onPressed: (){
@@ -441,18 +442,46 @@ class _HomePageState extends State<HomePage> {
                   )),
               Positioned(
                   top: 318,
-                  left: 110,
-                  child: Card(
-                    color: Colors.white,
-                    child: FlatButton(
-                      child: Text('Dynamic CheckBox',style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue,
-                          fontSize: 15,
-                          letterSpacing: 1)),
-                      onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DynamicCheckBox()));
-                      },
+                  left: 129,
+                  child: Container(
+                    height: 56,
+                    width: 120,
+                    child: Card(
+                      shadowColor: Colors.black,
+                      elevation: 5,borderOnForeground: true,
+                      color: Colors.white,
+                      child: FlatButton(
+                        child: Text('Dynamic CheckBox',style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 15,
+                            letterSpacing: 1)),
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DynamicCheckBox()));
+                        },
+                      ),
+                    ),
+                  )),
+              Positioned(
+                  top: 318,
+                  left: 262,
+                  child: Container(
+                    height: 56,
+                    width: 110,
+                    child: Card(
+                      shadowColor: Colors.black,
+                      elevation: 5,borderOnForeground: true,
+                      color: Colors.white,
+                      child: FlatButton(
+                        child: Text('Swipe Remove',style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 15,
+                            letterSpacing: 1)),
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SwipeRemove()));
+                        },
+                      ),
                     ),
                   )),
             ],
