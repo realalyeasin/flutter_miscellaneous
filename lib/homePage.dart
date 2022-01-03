@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
+import 'FilterSearch/FilterSearch.dart';
 import 'ImagePicker/imagePicker.dart';
 import 'ListHighlight/ListHighlight.dart';
 import 'Rating/ProductRating.dart';
@@ -156,13 +157,25 @@ class _HomePageState extends State<HomePage> {
                   .push(MaterialPageRoute(builder: (context) => SearchPage())),
               icon: Icon(Icons.search)),
           PopupMenuButton(
-            color: Colors.lightBlueAccent.shade100,
-              itemBuilder: (BuildContext ctx)=> [
-                PopupMenuItem(child: Text('Option 1'), value: 1,),
-                PopupMenuItem(child: Text('Option 2'), value: 2,),
-                PopupMenuItem(child: Text('Option 3'), value: 3,),
-                PopupMenuItem(child: Text('Option 4'), value: 4,),
-              ])
+              color: Colors.lightBlueAccent.shade100,
+              itemBuilder: (BuildContext ctx) => [
+                    PopupMenuItem(
+                      child: Text('Option 1'),
+                      value: 1,
+                    ),
+                    PopupMenuItem(
+                      child: Text('Option 2'),
+                      value: 2,
+                    ),
+                    PopupMenuItem(
+                      child: Text('Option 3'),
+                      value: 3,
+                    ),
+                    PopupMenuItem(
+                      child: Text('Option 4'),
+                      value: 4,
+                    ),
+                  ])
         ],
       ),
       body: Container(
@@ -189,7 +202,9 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           'Add Name',
                           style: TextStyle(
-                              letterSpacing: 2, fontSize: 13, color: Colors.white),
+                              letterSpacing: 2,
+                              fontSize: 13,
+                              color: Colors.white),
                         ),
                       ),
                       FlatButton(
@@ -333,23 +348,23 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                left: 300,
+                  left: 300,
                   top: 20,
                   child: Container(
-                width: 40,
-                height: 180,
-                color: Colors.white54,
-                child: FlatButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => TWHomePage()));
-                    },
-                    child: Text(
-                      'TextWrapper',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              )),
+                    width: 40,
+                    height: 180,
+                    color: Colors.white54,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => TWHomePage()));
+                        },
+                        child: Text(
+                          'TextWrapper',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        )),
+                  )),
               Positioned(
                 top: 262,
                 left: 5,
@@ -374,20 +389,22 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top: 262,
+                  top: 262,
                   left: 94,
                   child: Container(
                     width: 85,
                     color: Colors.white54,
-                child: FlatButton(
-                  child: Text('Stepper',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
-                  onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> StepByStep()));
-                  },
-                ),
-              )),
+                    child: FlatButton(
+                      child: Text('Stepper',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => StepByStep()));
+                      },
+                    ),
+                  )),
               Positioned(
                   top: 262,
                   left: 198,
@@ -395,11 +412,13 @@ class _HomePageState extends State<HomePage> {
                     width: 85,
                     color: Colors.white54,
                     child: FlatButton(
-                      child: Text('Rating',style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
-                      onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ProductRating()));
+                      child: Text('Rating',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ProductRating()));
                       },
                     ),
                   )),
@@ -418,9 +437,10 @@ class _HomePageState extends State<HomePage> {
                     height: 48,
                     color: Colors.white54,
                     child: Center(
-                      child: Text('Badge',style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
+                      child: Text('Badge',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
                     ),
                   ),
                 ),
@@ -430,13 +450,15 @@ class _HomePageState extends State<HomePage> {
                   child: Card(
                     color: Colors.white,
                     child: FlatButton(
-                      child: Text('Highlight',style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 15,
-                          letterSpacing: 1)),
-                      onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ListHighlight()));
+                      child: Text('Highlight',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 15,
+                              letterSpacing: 1)),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ListHighlight()));
                       },
                     ),
                   )),
@@ -448,16 +470,19 @@ class _HomePageState extends State<HomePage> {
                     width: 120,
                     child: Card(
                       shadowColor: Colors.black,
-                      elevation: 5,borderOnForeground: true,
+                      elevation: 5,
+                      borderOnForeground: true,
                       color: Colors.white,
                       child: FlatButton(
-                        child: Text('Dynamic CheckBox',style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 15,
-                            letterSpacing: 1)),
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DynamicCheckBox()));
+                        child: Text('Dynamic CheckBox',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 15,
+                                letterSpacing: 1)),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => DynamicCheckBox()));
                         },
                       ),
                     ),
@@ -470,20 +495,45 @@ class _HomePageState extends State<HomePage> {
                     width: 110,
                     child: Card(
                       shadowColor: Colors.black,
-                      elevation: 5,borderOnForeground: true,
+                      elevation: 5,
+                      borderOnForeground: true,
                       color: Colors.white,
                       child: FlatButton(
-                        child: Text('Swipe Remove',style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 15,
-                            letterSpacing: 1)),
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SwipeRemove()));
+                        child: Text('Swipe Remove',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 15,
+                                letterSpacing: 1)),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SwipeRemove()));
                         },
                       ),
                     ),
                   )),
+              Positioned(
+                top: 385,
+                left: 3,
+                child: Container(
+                  width: 70,
+                  height: 30,
+                  color: Colors.black,
+                  child: Center(
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FilterSearch()));
+                        },
+                        child: Text(
+                    'Filter',
+                    style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1),
+                  ),
+                      )),
+                ),
+              )
             ],
           ),
         ),
