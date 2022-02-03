@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
+import 'ChipItem/ChipItem.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
 import 'FilterSearch/FilterSearch.dart';
 import 'ImagePicker/imagePicker.dart';
@@ -531,6 +532,29 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500,
                           letterSpacing: 1),
                   ),
+                      )),
+                ),
+              ),
+              Positioned(
+                top: 385,
+                left: 80,
+                child: Container(
+                  width: 120,
+                  height: 30,
+                  color: Colors.lightBlueAccent,
+                  child: Center(
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ChipItem()));
+                        },
+                        child: Text(
+                          'Chip Item',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1),
+                        ),
                       )),
                 ),
               )
