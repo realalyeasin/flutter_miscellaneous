@@ -9,6 +9,7 @@ import 'ImagePicker/imagePicker.dart';
 import 'ListHighlight/ListHighlight.dart';
 import 'Rating/ProductRating.dart';
 import 'SQFLiteNotes/SQFLNotesHomePage.dart';
+import 'SliverBar/SliverBar.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Stepper/StepByStep.dart';
 import 'SwipeRemove/SwipeRemove.dart';
@@ -187,366 +188,373 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.bottomRight,
               colors: [Colors.blueAccent, Colors.black]),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Column(
-                    children: [
-                      FlatButton(
-                        color: Colors.black,
-                        onPressed: () async {
-                          await showInformationDialog(context);
-                        },
-                        child: Text(
-                          'Add Name',
-                          style: TextStyle(
-                              letterSpacing: 2,
-                              fontSize: 13,
-                              color: Colors.white),
-                        ),
-                      ),
-                      FlatButton(
-                          onPressed: () async {
-                            await showRegisterDialog(context);
-                          },
-                          color: Colors.black,
-                          highlightColor: Colors.lightGreenAccent,
-                          child: Text(
-                            'Register with mail',
-                            style: TextStyle(
-                                color: Colors.white,
-                                letterSpacing: 2,
-                                fontSize: 13),
-                          )),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      FlatButton(
-                          onPressed: () async {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => DatePickerDialog(
-                                      initialDate: DateTime.now(),
-                                      firstDate: DateTime(1995),
-                                      lastDate: DateTime(2022),
-                                    )));
-                          },
-                          color: Colors.black,
-                          highlightColor: Colors.lightGreenAccent,
-                          child: Text(
-                            'Calender',
-                            style: TextStyle(
-                                color: Colors.white,
-                                letterSpacing: 2,
-                                fontSize: 13),
-                          )),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      FlatButton(
-                          color: Colors.black,
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => IImagePicker()));
-                          },
-                          child: Text(
-                            'Image Picker',
-                            style: TextStyle(
-                                color: Colors.white,
-                                letterSpacing: 2,
-                                fontSize: 13,
-                                backgroundColor: Colors.black),
-                          ))
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 210,
-                child: Row(
-                  children: [
-                    ClipPath(
-                      clipper: MyClipper(),
-                      child: Container(
-                        width: 120,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Colors.deepPurple, Colors.purple]),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(1),
-                                spreadRadius: 5,
-                                blurRadius: 5,
-                                offset: Offset(1, 4),
-                              )
-                            ]),
-                        child: Stack(children: [
-                          Positioned(
-                              top: 11,
-                              left: 5,
+        child: PageView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          FlatButton(
+                            color: Colors.black,
+                            onPressed: () async {
+                              await showInformationDialog(context);
+                            },
+                            child: Text(
+                              'Add Name',
+                              style: TextStyle(
+                                  letterSpacing: 2,
+                                  fontSize: 13,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          FlatButton(
+                              onPressed: () async {
+                                await showRegisterDialog(context);
+                              },
+                              color: Colors.black,
+                              highlightColor: Colors.lightGreenAccent,
                               child: Text(
-                                'ClipBehavior',
+                                'Register with mail',
                                 style: TextStyle(
                                     color: Colors.white,
                                     letterSpacing: 2,
-                                    fontWeight: FontWeight.bold),
+                                    fontSize: 13),
                               )),
-                        ]),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ClipPath(
-                      clipper: MyClipper(),
-                      child: Container(
-                        width: 178,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Colors.purple, Colors.pinkAccent]),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(1),
-                                spreadRadius: 1,
-                                blurRadius: 2,
-                                offset: Offset(0, 1),
-                              )
-                            ]),
-                        child: Stack(children: [
-                          Positioned(
-                              top: -5,
-                              left: 1,
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => SMHomeScreen()));
-                                },
-                                child: Text(
-                                  'State Management',
-                                  style: TextStyle(
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FlatButton(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DatePickerDialog(
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime(1995),
+                                          lastDate: DateTime(2022),
+                                        )));
+                              },
+                              color: Colors.black,
+                              highlightColor: Colors.lightGreenAccent,
+                              child: Text(
+                                'Calender',
+                                style: TextStyle(
                                     color: Colors.white,
                                     letterSpacing: 2,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  ),
-                                ),
+                                    fontSize: 13),
                               )),
-                        ]),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FlatButton(
+                              color: Colors.black,
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => IImagePicker()));
+                              },
+                              child: Text(
+                                'Image Picker',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    letterSpacing: 2,
+                                    fontSize: 13,
+                                    backgroundColor: Colors.black),
+                              ))
+                        ],
                       ),
                     ),
-                    SizedBox(
-                      width: 12,
+                  ),
+                  Positioned(
+                    top: 210,
+                    child: Row(
+                      children: [
+                        ClipPath(
+                          clipper: MyClipper(),
+                          child: Container(
+                            width: 120,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [Colors.deepPurple, Colors.purple]),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(1),
+                                    spreadRadius: 5,
+                                    blurRadius: 5,
+                                    offset: Offset(1, 4),
+                                  )
+                                ]),
+                            child: Stack(children: [
+                              Positioned(
+                                  top: 11,
+                                  left: 5,
+                                  child: Text(
+                                    'ClipBehavior',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ]),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        ClipPath(
+                          clipper: MyClipper(),
+                          child: Container(
+                            width: 178,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [Colors.purple, Colors.pinkAccent]),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(1),
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: Offset(0, 1),
+                                  )
+                                ]),
+                            child: Stack(children: [
+                              Positioned(
+                                  top: -5,
+                                  left: 1,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SMHomeScreen()));
+                                    },
+                                    child: Text(
+                                      'State Management',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  )),
+                            ]),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              Positioned(
-                  left: 300,
-                  top: 20,
-                  child: Container(
-                    width: 40,
-                    height: 180,
-                    color: Colors.white54,
-                    child: FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => TWHomePage()));
-                        },
-                        child: Text(
-                          'TextWrapper',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                        )),
-                  )),
-              Positioned(
-                top: 262,
-                left: 5,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 70,
-                      color: Colors.white54,
-                      child: FlatButton(
+                  ),
+                  Positioned(
+                      left: 300,
+                      top: 20,
+                      child: Container(
+                        width: 40,
+                        height: 180,
+                        color: Colors.white54,
+                        child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => TWHomePage()));
+                            },
+                            child: Text(
+                              'TextWrapper',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            )),
+                      )),
+                  Positioned(
+                    top: 262,
+                    left: 5,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 70,
+                          color: Colors.white54,
+                          child: FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => SQFLNotesHomePage()));
+                              },
+                              child: Text(
+                                'SQFL Notes',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              )),
+                        )
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                      top: 262,
+                      left: 94,
+                      child: Container(
+                        width: 85,
+                        color: Colors.white54,
+                        child: FlatButton(
+                          child: Text('Stepper',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SQFLNotesHomePage()));
+                                builder: (context) => StepByStep()));
                           },
-                          child: Text(
-                            'SQFL Notes',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          )),
-                    )
-                  ],
-                ),
-              ),
-              Positioned(
-                  top: 262,
-                  left: 94,
-                  child: Container(
-                    width: 85,
-                    color: Colors.white54,
-                    child: FlatButton(
-                      child: Text('Stepper',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => StepByStep()));
-                      },
-                    ),
-                  )),
-              Positioned(
-                  top: 262,
-                  left: 198,
-                  child: Container(
-                    width: 85,
-                    color: Colors.white54,
-                    child: FlatButton(
-                      child: Text('Rating',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ProductRating()));
-                      },
-                    ),
-                  )),
-              Positioned(
-                top: 262,
-                left: 299,
-                child: Badge(
-                  position: BadgePosition.topEnd(top: -10, end: -12),
-                  badgeColor: Colors.deepOrange,
-                  badgeContent: Container(
-                    alignment: Alignment.center,
-                    child: Text('12'),
-                  ),
-                  child: Container(
-                    width: 69,
-                    height: 48,
-                    color: Colors.white54,
-                    child: Center(
-                      child: Text('Badge',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                  top: 318,
-                  child: Card(
-                    color: Colors.white,
-                    child: FlatButton(
-                      child: Text('Highlight',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontSize: 15,
-                              letterSpacing: 1)),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ListHighlight()));
-                      },
-                    ),
-                  )),
-              Positioned(
-                  top: 318,
-                  left: 129,
-                  child: Container(
-                    height: 56,
-                    width: 120,
-                    child: Card(
-                      shadowColor: Colors.black,
-                      elevation: 5,
-                      borderOnForeground: true,
-                      color: Colors.white,
-                      child: FlatButton(
-                        child: Text('Dynamic CheckBox',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontSize: 15,
-                                letterSpacing: 1)),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DynamicCheckBox()));
-                        },
+                        ),
+                      )),
+                  Positioned(
+                      top: 262,
+                      left: 198,
+                      child: Container(
+                        width: 85,
+                        color: Colors.white54,
+                        child: FlatButton(
+                          child: Text('Rating',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ProductRating()));
+                          },
+                        ),
+                      )),
+                  Positioned(
+                    top: 262,
+                    left: 299,
+                    child: Badge(
+                      position: BadgePosition.topEnd(top: -10, end: -12),
+                      badgeColor: Colors.deepOrange,
+                      badgeContent: Container(
+                        alignment: Alignment.center,
+                        child: Text('12'),
+                      ),
+                      child: Container(
+                        width: 69,
+                        height: 48,
+                        color: Colors.white54,
+                        child: Center(
+                          child: Text('Badge',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ),
                       ),
                     ),
-                  )),
-              Positioned(
-                  top: 318,
-                  left: 262,
-                  child: Container(
-                    height: 56,
-                    width: 110,
-                    child: Card(
-                      shadowColor: Colors.black,
-                      elevation: 5,
-                      borderOnForeground: true,
-                      color: Colors.white,
-                      child: FlatButton(
-                        child: Text('Swipe Remove',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontSize: 15,
-                                letterSpacing: 1)),
+                  ),
+                  Positioned(
+                      top: 318,
+                      child: Card(
+                        color: Colors.white,
+                        child: FlatButton(
+                          child: Text('Highlight',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  letterSpacing: 1)),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ListHighlight()));
+                          },
+                        ),
+                      )),
+                  Positioned(
+                      top: 318,
+                      left: 129,
+                      child: Container(
+                        height: 56,
+                        width: 120,
+                        child: Card(
+                          shadowColor: Colors.black,
+                          elevation: 5,
+                          borderOnForeground: true,
+                          color: Colors.white,
+                          child: FlatButton(
+                            child: Text('Dynamic CheckBox',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    letterSpacing: 1)),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => DynamicCheckBox()));
+                            },
+                          ),
+                        ),
+                      )),
+                  Positioned(
+                      top: 318,
+                      left: 262,
+                      child: Container(
+                        height: 56,
+                        width: 110,
+                        child: Card(
+                          shadowColor: Colors.black,
+                          elevation: 5,
+                          borderOnForeground: true,
+                          color: Colors.white,
+                          child: FlatButton(
+                            child: Text('Swipe Remove',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    letterSpacing: 1)),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SwipeRemove()));
+                            },
+                          ),
+                        ),
+                      )),
+                  Positioned(
+                    top: 385,
+                    left: 3,
+                    child: Container(
+                      width: 70,
+                      height: 30,
+                      color: Colors.black,
+                      child: Center(
+                          child: FlatButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SwipeRemove()));
-                        },
-                      ),
-                    ),
-                  )),
-              Positioned(
-                top: 385,
-                left: 3,
-                child: Container(
-                  width: 70,
-                  height: 30,
-                  color: Colors.black,
-                  child: Center(
-                      child: FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FilterSearch()));
+                              builder: (context) => FilterSearch()));
                         },
                         child: Text(
-                    'Filter',
-                    style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1),
-                  ),
+                          'Filter',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1),
+                        ),
                       )),
-                ),
-              ),
-              Positioned(
-                top: 385,
-                left: 80,
-                child: Container(
-                  width: 120,
-                  height: 30,
-                  color: Colors.lightBlueAccent,
-                  child: Center(
-                      child: FlatButton(
+                    ),
+                  ),
+                  Positioned(
+                    top: 385,
+                    left: 80,
+                    child: Container(
+                      width: 120,
+                      height: 30,
+                      color: Colors.lightBlueAccent,
+                      child: Center(
+                          child: FlatButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ChipItem()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ChipItem()));
                         },
                         child: Text(
                           'Chip Item',
@@ -557,23 +565,24 @@ class _HomePageState extends State<HomePage> {
                               letterSpacing: 1),
                         ),
                       )),
-                ),
-              ),
-              Positioned(
-                top: 385,
-                left: 208,
-                child: Container(
-                  width: 161,
-                  height: 50,
-                  color: Colors.white,
-                  child: Center(
-                      child: FlatButton(
+                    ),
+                  ),
+                  Positioned(
+                    top: 385,
+                    left: 208,
+                    child: Container(
+                      width: 161,
+                      height: 50,
+                      color: Colors.white,
+                      child: Center(
+                          child: FlatButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FetchRefresh()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => FetchRefresh()));
                         },
                         child: Text(
                           ' Fetch and  \n'
-                              '  Refresh     ',
+                          '  Refresh     ',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -582,10 +591,36 @@ class _HomePageState extends State<HomePage> {
                               letterSpacing: 2),
                         ),
                       )),
-                ),
-              )
-            ],
-          ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 425,
+                    left: 5,
+                    child: Container(
+                      width: 94,
+                      height: 50,
+                      color: Colors.white,
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SliverBar()));
+                            },
+                            child: Text('Sliver Bar',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  backgroundColor: Colors.lightBlueAccent.shade100,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2),
+                            ),
+                          )),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
