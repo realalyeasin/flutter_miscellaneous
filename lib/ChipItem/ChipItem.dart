@@ -61,7 +61,7 @@ class _ChipItemState extends State<ChipItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.cyan,
       appBar: AppBar(
         backgroundColor: Colors.lightGreenAccent,
         title: Text('Chip Item',

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ChipItem/ChipItem.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
+import 'FetchRefresh/FetchRefresh.dart';
 import 'FilterSearch/FilterSearch.dart';
 import 'ImagePicker/imagePicker.dart';
 import 'ListHighlight/ListHighlight.dart';
@@ -554,6 +555,31 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1),
+                        ),
+                      )),
+                ),
+              ),
+              Positioned(
+                top: 385,
+                left: 208,
+                child: Container(
+                  width: 161,
+                  height: 50,
+                  color: Colors.white,
+                  child: Center(
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FetchRefresh()));
+                        },
+                        child: Text(
+                          ' Fetch and  \n'
+                              '  Refresh     ',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              backgroundColor: Colors.lightBlueAccent.shade100,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
                         ),
                       )),
                 ),
