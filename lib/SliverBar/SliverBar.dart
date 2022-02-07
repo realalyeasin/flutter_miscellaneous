@@ -10,6 +10,7 @@ class SliverBar extends StatefulWidget {
 }
 
 class _SliverBarState extends State<SliverBar> {
+  var card = Color.fromRGBO(125, 19, 115, 1);
   var ii = 0;
   final List _gridItems = List.generate(81, (i) => 'Item $i');
   @override
@@ -26,10 +27,10 @@ class _SliverBarState extends State<SliverBar> {
         return notification.depth==0;
       },
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(255, 225, 142, 1),
         appBar: AppBar(
           title: Text('Sliver Bar'),
-          backgroundColor: Colors.black26,
+          backgroundColor: Color.fromRGBO(78, 5, 70, 1),
           automaticallyImplyLeading: true,
         ),
         body: CustomScrollView(
@@ -61,37 +62,37 @@ class _SliverBarState extends State<SliverBar> {
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 ),
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 ),
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 ),
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 ),
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 ),
                 Card(
                   shadowColor: Colors.white,
                   margin: EdgeInsets.all(12),
-                  color: Colors.orangeAccent,
+                  color: card,
                   child: Container(),
                 )
               ],),
