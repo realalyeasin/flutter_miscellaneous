@@ -37,16 +37,16 @@ class _FetchRefreshState extends State<FetchRefresh> {
         child: ListView.builder(
             itemCount: _todos.length,
             itemBuilder: (BuildContext ctx, index){
-          return Card(
-            margin: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
-            child: ListTile(
-              leading: Text(_todos[index]['id'].toString()),
-              title: Text(_todos[index]['title']),
-              trailing: _todos[index]['completed'] ? Icon(Icons.check, color: Colors.green,) :
-                  Icon(Icons.cancel_presentation, color: Colors.red,)
-            ),
-          );
-        }),
+              return Card(
+                margin: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+                child: ListTile(
+                    leading: Text(_todos[index]['id'].toString()),
+                    title: Text(_todos[index]['title']),
+                    trailing: _todos[index]['completed'] ? Icon(Icons.check, color: Colors.green,) :
+                    Icon(Icons.cancel_presentation, color: Colors.red,)
+                ),
+              );
+            }),
       ),
     );
   }

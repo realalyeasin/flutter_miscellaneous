@@ -13,6 +13,7 @@ import 'SliverBar/SliverBar.dart';
 import 'StateManagement/screens/home_screen.dart';
 import 'Stepper/StepByStep.dart';
 import 'SwipeRemove/SwipeRemove.dart';
+import 'WeatherAPI.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
 
@@ -607,6 +608,30 @@ class _HomePageState extends State<HomePage> {
                                   builder: (context) => SliverBar()));
                             },
                             child: Text('Sliver Bar',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  backgroundColor: Colors.lightBlueAccent.shade100,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Positioned(
+                    top: 425,
+                    left: 107,
+                    child: Container(
+                      width: 94,
+                      height: 50,
+                      color: Colors.white,
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => WeatherAPI()));
+                            },
+                            child: Text('WeatherAPI',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
