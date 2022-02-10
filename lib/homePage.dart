@@ -16,6 +16,7 @@ import 'SwipeRemove/SwipeRemove.dart';
 import 'WeatherAPI.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
+import 'Xpansion/Xpansion.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -636,6 +637,29 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.black,
                                   fontSize: 16,
                                   backgroundColor: Colors.lightBlueAccent.shade100,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Positioned(
+                    top: 442,
+                    left: 208,
+                    child: Container(
+                      width: 124,
+                      height: 33,
+                      color: Color.fromRGBO(185, 22, 103, 1),
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Xpansion()));
+                            },
+                            child: Text('Xpansion',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(204, 255, 62, 1),
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   letterSpacing: 2),
                             ),

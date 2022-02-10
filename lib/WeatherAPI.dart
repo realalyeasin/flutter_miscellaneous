@@ -13,20 +13,25 @@ class WeatherAPI extends StatefulWidget {
 }
 
 class _WeatherAPIState extends State<WeatherAPI> {
+  int temperature = 0;
+  String location = 'San Francisco';
   Xml2Json xml2json = Xml2Json();
-  Future<String> fetchSearch () async {
-    final xml = XmlDocument.parse(
-        'http://api.worldweatheronline.com/premium/v1/weather.ashx?key=2647b9bcf875426a97c105637220802&q=London&num_of_days=2&tp=3&format=xml')
-    as String;
+  void fetchSearch(String input) async {
+    final xml =
+            'https://www.metaweather.com/api/location/search/?query=$input';
     try {
       var response = await http.get(Uri.parse(xml));
-      xml2json.parse(response.body);
-      final jsonData = xml2json.toParker();
-      String result = jsonDecode(jsonData);
-      return result;
+      var result = json.decode(response.body)[0];
+      setState(() {
+        location = result["title"];
+      });
     } catch (err) {
       throw err;
     }
+  }
+
+  void onTextFieldSubmitted(String input) {
+    fetchSearch(input);
   }
 
   @override
@@ -38,15 +43,23 @@ class _WeatherAPIState extends State<WeatherAPI> {
       ),
       backgroundColor: Colors.lightBlueAccent,
       body: Container(
-        child:
-
-        Column(
+        width: 300,
+        child: Column(
           children: [
-            Text(fetchSearch().toString()),
+            TextField(
+                onSubmitted: (String input) {
+                  onTextFieldSubmitted(input);
+                },
+                style: TextStyle(),
+                decoration: InputDecoration(
+                    hintText: 'Search Location. . .',
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Color.fromRGBO(19, 75, 95, 1),
+                    ))),
+            Text(location.toString())
           ],
         ),
-
-
       ),
     );
   }
