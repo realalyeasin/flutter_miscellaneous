@@ -606,19 +606,20 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                       child: Center(
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SliverBar()));
-                            },
-                            child: Text('Sliver Bar',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  backgroundColor: Colors.lightBlueAccent.shade100,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                          )),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SliverBar()));
+                        },
+                        child: Text(
+                          'Sliver Bar',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              backgroundColor: Colors.lightBlueAccent.shade100,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      )),
                     ),
                   ),
                   Positioned(
@@ -630,19 +631,20 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                       child: Center(
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => WeatherAPI()));
-                            },
-                            child: Text('WeatherAPI',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  backgroundColor: Colors.lightBlueAccent.shade100,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                          )),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => WeatherAPI()));
+                        },
+                        child: Text(
+                          'WeatherAPI',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              backgroundColor: Colors.lightBlueAccent.shade100,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      )),
                     ),
                   ),
                   Positioned(
@@ -654,18 +656,19 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromRGBO(185, 22, 103, 1),
                       child: Center(
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Expansion()));
-                            },
-                            child: Text('Xpansion',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(204, 255, 62, 1),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                          )),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Expansion()));
+                        },
+                        child: Text(
+                          'Xpansion',
+                          style: TextStyle(
+                              color: Color.fromRGBO(204, 255, 62, 1),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      )),
                     ),
                   ),
                   Positioned(
@@ -677,18 +680,19 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromRGBO(204, 255, 62, 1),
                       child: Center(
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => EmailFieldValidation()));
-                            },
-                            child: Text('LOCATION',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                          )),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => EmailFieldValidation()));
+                        },
+                        child: Text(
+                          'LOCATION',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      )),
                     ),
                   ),
                   Positioned(
@@ -700,18 +704,19 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromRGBO(204, 255, 62, 1),
                       child: Center(
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => DrawerCustom()));
-                            },
-                            child: Text('Custom Drawer',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1),
-                            ),
-                          )),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => DrawerCustom()));
+                        },
+                        child: Text(
+                          'Custom Drawer',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1),
+                        ),
+                      )),
                     ),
                   )
                 ],
