@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ChipItem/ChipItem.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
+import 'EmailFieldValidation/EmailFieldValidation.dart';
 import 'FetchRefresh/FetchRefresh.dart';
 import 'FilterSearch/FilterSearch.dart';
 import 'ImagePicker/imagePicker.dart';
@@ -654,12 +655,35 @@ class _HomePageState extends State<HomePage> {
                           child: FlatButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Xpansion()));
+                                  builder: (context) => Expansion()));
                             },
                             child: Text('Xpansion',
                               style: TextStyle(
                                   color: Color.fromRGBO(204, 255, 62, 1),
                                   fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Positioned(
+                    top: 442,
+                    left: 338,
+                    child: Container(
+                      width: 32,
+                      height: 100,
+                      color: Color.fromRGBO(204, 255, 62, 1),
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => EmailFieldValidation()));
+                            },
+                            child: Text('LOCATION',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 9,
                                   fontWeight: FontWeight.bold,
                                   letterSpacing: 2),
                             ),

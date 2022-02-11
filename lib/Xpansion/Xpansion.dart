@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'model/xpansionModel.dart';
 
-class Xpansion extends StatelessWidget {
-  const Xpansion({Key? key}) : super(key: key);
+class Expansion extends StatelessWidget {
+  const Expansion({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +56,12 @@ class Xpansion extends StatelessWidget {
                 isExpanded: itemData[index].expanded,
               )
             ],
-            expansionCallback: (int item, bool status) {
+            expansionCallback: (index, isExpanded)=>
               setState(() {
-                itemData[index].expanded = !itemData[index].expanded;
-              });
-            },
+                isExpanded = !itemData[index].expanded;
+
+              })
+
 
           );
         }),
@@ -68,7 +69,6 @@ class Xpansion extends StatelessWidget {
     );
   }
 
-  void setState(Null Function() param0) {
-
-  }
+  void setState(Null Function() param0) {}
+  
 }
