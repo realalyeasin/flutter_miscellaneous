@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:important_widgets/DrawerCustom/DrawerCustom.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
 import 'ChipItem/ChipItem.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
@@ -149,14 +150,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerCustom(),
       backgroundColor: Colors.lightGreenAccent[100],
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(7, 43, 19, 1),
         title: Text(
           'Flutter Miscellaneous',
-          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 2),
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1),
         ),
-        centerTitle: true,
         actions: [
           IconButton(
               onPressed: () => Navigator.of(context)
@@ -686,6 +687,29 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 9,
                                   fontWeight: FontWeight.bold,
                                   letterSpacing: 2),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Positioned(
+                    top: 480,
+                    left: 252,
+                    child: Container(
+                      width: 80,
+                      height: 50,
+                      color: Color.fromRGBO(204, 255, 62, 1),
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => DrawerCustom()));
+                            },
+                            child: Text('Custom Drawer',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1),
                             ),
                           )),
                     ),
