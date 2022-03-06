@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'PopUpMenu/PopUp1.dart';
 import 'StateManagement/provider/movie_provider.dart';
 import 'homePage.dart';
 
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
                 color: Colors.lightBlueAccent.shade100,
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    print(
-                        'ok'); //navigatorKey.currentState.push(MaterialPageRoute())
+                    navigatorKey.currentState?.push(MaterialPageRoute(
+                        builder: (context) =>
+                            PopUp1())); //navigatorKey.currentState.push(MaterialPageRoute())
                   }
                 },
                 itemBuilder: (BuildContext ctx) => [
