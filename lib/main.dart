@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'StateManagement/provider/movie_provider.dart';
 import 'homePage.dart';
+
 
 void main() {
   runApp(ChangeNotifierProvider<MovieProvider>(

@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:important_widgets/DrawerCustom/DrawerCustom.dart';
 import 'package:important_widgets/TextWrapper/TWHomePage.dart';
+import 'Accordion/Accordion.dart';
 import 'ChipItem/ChipItem.dart';
 import 'DynamicCheckBox/DynamicCheckBox.dart';
 import 'EmailFieldValidation/EmailFieldValidation.dart';
@@ -19,6 +20,7 @@ import 'WeatherAPI.dart';
 import 'Widgets/SearchPage.dart';
 import 'Widgets/clip.dart';
 import 'Xpansion/Xpansion.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -696,7 +698,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Positioned(
-                    top: 480,
+                    top: 483,
                     left: 252,
                     child: Container(
                       width: 80,
@@ -717,6 +719,31 @@ class _HomePageState extends State<HomePage> {
                               letterSpacing: 1),
                         ),
                       )),
+                    ),
+                  ),
+                  Positioned(
+                    top: 546,
+                    left: 252,
+                    child: Container(
+                      width: 118,
+                      height: 50,
+                      color: Color.fromRGBO(204, 255, 62, 1),
+                      child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Accordion()));
+                            },
+                            child: Text(
+                              'Accordion',
+                              style: TextStyle(
+                                  color: Colors.purple,
+                                  fontSize: 14,
+                                  backgroundColor: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2),
+                            ),
+                          )),
                     ),
                   )
                 ],
